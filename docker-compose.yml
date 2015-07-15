@@ -1,0 +1,15 @@
+doku:
+  image: mprasil/dokuwiki:latest
+  restart: always
+  environment:
+    - TZ=Asia/Taipei
+    - DOKUWIKI_VERSION=2014-09-29d
+    - DOKUWIKI_CSUM=2bf2d6c242c00e9c97f0647e71583375
+  ports:
+    - "80:80"
+  volumes:
+    - ./dokuwiki/data:/dokuwiki/data
+    - ./dokuwiki/conf:/dokuwiki/conf
+    - ./dokuwiki/lib/plugins:/dokuwiki/lib/plugins
+    - ./dokuwiki/lib/tpl:/dokuwiki/lib/tpl
+    - ./dokuwiki/log:/var/log
